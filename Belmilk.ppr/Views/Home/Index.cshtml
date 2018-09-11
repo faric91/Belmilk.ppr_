@@ -3,6 +3,29 @@
 }
 
 <div class="container" id="app">
-    {{mes}}
-    {{secondMes}}
+    <div style="display:flex; flex-direction:column; justify-content:center;">
+        <div style="display: flex; flex-direction:row; justify-content:flex-start;">
+            <div style="padding-top:7px; margin-right: 15px; width:10%;">
+                <label for="staticEmail">Поиск :</label>
+            </div>
+            <div style="width:90%;">
+                <input type="text" class="form-control">
+            </div>
+        </div>
+
+        <div style="display:flex; flex-direction:row; justify-content:flex-start; margin-top:15px;">
+            <div><p>Список оборудования</p></div>
+        </div>
+
+        <div style="display:flex; flex-direction:row; justify-content:flex-start;">
+            <table-eqpm-vue-cmp>
+            </table-eqpm-vue-cmp>
+        </div>
+
+        <div style="display:flex; flex-direction:row; justify-content: flex-start;">
+            <div>
+
+            </div>
+        </div>
+    </div>
 </div>
