@@ -193,6 +193,7 @@
     <None Include="packages.config" />
     <Content Include="src\components\TableEqpm-VueCmp.vue" />
     <Content Include="src\components\RowEqpm-VueCmp.vue" />
+    <Content Include="src\EventBus.js" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
