@@ -3,6 +3,7 @@
 Vue = new Vue({
     el: '#app',
     data: {
-        mes: 'message'
+        mes: 'message',
+        secondMes: 'second message'
     }
 })
