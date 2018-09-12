@@ -3,7 +3,7 @@
         <div style="display: flex; flex-direction:row; justify-content: flex-start;">
         </div>
         <div style="display: flex; flex-direction:row; justify-content: flex-start; width:100%; margin-top:15px;">
-            <table class="table table-hover" id="table_eqpm">
+            <table class="table table-hover table-bordered" id="table_eqpm">
                 <thead>
                     <tr>
                         <th>№</th>
@@ -46,9 +46,6 @@
             }
         },
         created: function() {
-            EventBus.$on('info-click', id => {
-                console.log('click - ' + id);
-            });
         },
         components: {
             'row-eqpm-vue-cmp': RowEqpmVueCmp

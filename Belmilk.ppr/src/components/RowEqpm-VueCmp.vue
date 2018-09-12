@@ -21,7 +21,7 @@
         },
         methods: {
             info() {
-                EventBus.$emit('info-click', this.id);
+                EventBus.$emit('event_click_info-eqpm', this.id);
             }
         }
     }

@@ -194,6 +194,9 @@
     <Content Include="src\components\TableEqpm-VueCmp.vue" />
     <Content Include="src\components\RowEqpm-VueCmp.vue" />
     <Content Include="src\EventBus.js" />
+    <Content Include="src\components\DivInfoEqpm-VueCmp.vue" />
+    <Content Include="src\components\TableCmpEqpm-VueCmp.vue" />
+    <Content Include="src\components\RowCmpEqpm-VueCmp.vue" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
