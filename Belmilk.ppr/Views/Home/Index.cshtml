@@ -9,7 +9,7 @@
                 <label for="staticEmail">Поиск :</label>
             </div>
             <div style="width:90%;">
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" v-on:keyup.enter="event_keyup_serch()">
             </div>
         </div>
 

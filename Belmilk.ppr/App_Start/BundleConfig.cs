@@ -14,6 +14,8 @@ namespace Belmilk.ppr
                       "~/node_modules/bootstrap/dist/js/bootstrap.min.js"));
             bundles.Add(new ScriptBundle("~/bundles/bundle").Include(
                       "~/dist/bundle.js"));
+            bundles.Add(new ScriptBundle("~/bundles/lodash").Include(
+                      "~/node_modules/lodash/lodash.min.js"));
 
 
             bundles.Add(new StyleBundle("~/Content/css").Include(

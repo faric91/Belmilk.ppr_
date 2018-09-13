@@ -12,6 +12,7 @@ Vue = new Vue({
     },
     data: {
         f: {},
+        list_eqpm: [],
         eqpm_info_visible: false,
         mes: 'message',
         secondMes: 'second message'
@@ -20,14 +21,19 @@ Vue = new Vue({
         this.f = new FirebaseBelmilk();
         this.f.init();
         this.f.equipments().then((res) => {
-            console.log(res[0].begindate);
+            this.list_eqpm = res;
         });
 
         EventBus.$on('event_click_info-eqpm', id => {
             if (id !== undefined) {
                 this.eqpm_info_visible = true;
-                console.log(this.eqpm_info_visible);
+                //console.log(this.eqpm_info_visible);
             }
         });
+    },
+    methods: {
+        event_keyup_serch() {
+            console.log(this.list_eqpm);
+        }
     }
 })
