@@ -2,8 +2,12 @@
     <tr>
         <td>{{eqpm.number}}</td>
         <td>{{eqpm.article}}</td>
+        <td>{{eqpm.stage}}</td>
+        <td>{{eqpm.lastDate}}</td>
+        <td>{{eqpm.nextDate}}</td>
         <td>
-            <button class="btn btn-outline-primary btn-sm" v-on:click="info()"><i class="fas fa-align-justify"></i></button>
+            <a href="#" style="margin-left:10px;"><i class="fas fa-align-justify"></i></a>
+            <a href="#" style="margin-left:10px; color:green;"><i class="fas fa-check"></i></a> 
         </td>
     </tr>
 </template>

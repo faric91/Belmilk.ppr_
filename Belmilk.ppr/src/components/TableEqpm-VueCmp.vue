@@ -8,6 +8,9 @@
                     <tr>
                         <th>№</th>
                         <th>Номер</th>
+                        <th>Период</th>
+                        <th>Дата последней поверки</th>
+                        <th>Дата следующей поверки</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -36,11 +39,17 @@
                 eqpms: [
                     {
                         number: 1,
-                        article: 'y-01'
+                        article: 'y-01',
+                        stage: '12',
+                        lastDate: '2018.09.10',
+                        nextDate: '2018.10.10'
                     },
                     {
                         number: 2,
-                        article: 'y-02'
+                        article: 'article-02',
+                        stage: '12',
+                        lastDate: '2018.09.11',
+                        nextDate: '2018.10.11'
                     }
                 ]
             }

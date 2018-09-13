@@ -34,3 +34,9 @@
 .belmilk-flex-start {
     justify-content:flex-start;
 }
+
+table td {
+    font-size: 12px;
+    padding:5px!important;
+    padding-bottom:5px!important;
+}
