@@ -6,7 +6,7 @@
         <td>{{eqpm.lastDate}}</td>
         <td>{{eqpm.nextDate}}</td>
         <td>
-            <a href="#" style="margin-left:10px;"><i class="fas fa-align-justify"></i></a>
+            <a href="#" style="margin-left:10px;" v-on:click="event_click_eqpm_info()"><i class="fas fa-align-justify"></i></a>
             <a href="#" style="margin-left:10px; color:green;"><i class="fas fa-check"></i></a> 
         </td>
     </tr>
@@ -21,10 +21,12 @@
             id: Number
         },
         data: function () {
+            return {
 
+            }
         },
         methods: {
-            info() {
+            event_click_eqpm_info() {
                 EventBus.$emit('event_click_info-eqpm', this.id);
             }
         }
