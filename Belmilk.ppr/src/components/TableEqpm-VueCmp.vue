@@ -54,7 +54,10 @@
                 ]
             }
         },
-        created: function() {
+        created: function () {
+            EventBus.$on('event_search_eqpm', (s) => {
+                console.log(s.startdate);
+            });
         },
         components: {
             'row-eqpm-vue-cmp': RowEqpmVueCmp

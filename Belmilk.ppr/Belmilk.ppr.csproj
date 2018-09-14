@@ -165,6 +165,7 @@
     <Content Include="Images\logo_short.png" />
     <Content Include="src\firebase_belmilk.js" />
     <Content Include="src\index.js" />
+    <Content Include="src\search_belmilk.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -198,6 +199,7 @@
     <Content Include="src\components\DivInfoEqpm-VueCmp.vue" />
     <Content Include="src\components\TableCmpEqpm-VueCmp.vue" />
     <Content Include="src\components\RowCmpEqpm-VueCmp.vue" />
+    <Content Include="src\components\SearchInput-VueCmp.vue" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
