@@ -33,6 +33,7 @@
     import { EventBus } from '../EventBus.js'
     import RowEqpmVueCmp from './RowEqpm-VueCmp.vue'
 
+
     export default {
         data: function () {
             return {
@@ -55,9 +56,9 @@
             }
         },
         created: function () {
-            EventBus.$on('event_search_eqpm', (s) => {
-                console.log(s.startdate);
-            });
+            //EventBus.$on('event_search_eqpm', (s) => {
+            //    console.log(s.startdate);
+            //});
         },
         components: {
             'row-eqpm-vue-cmp': RowEqpmVueCmp

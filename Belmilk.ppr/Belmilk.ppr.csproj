@@ -163,9 +163,11 @@
     </Content>
     <Content Include="Images\logo.png" />
     <Content Include="Images\logo_short.png" />
+    <Content Include="src\Core.js" />
     <Content Include="src\firebase_belmilk.js" />
     <Content Include="src\index.js" />
     <Content Include="src\search_belmilk.js" />
+    <Content Include="src\Utils.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
