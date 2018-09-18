@@ -17,7 +17,11 @@
             <div><p>Список оборудования</p></div>
         </div>
 
-        <div style="display:flex; flex-direction:row; justify-content:flex-start;">
+        <div style="display:flex; flex-direction:row; justify-content:flex-end; margin-bottom:5px; padding:5px;">
+            <button type="button" class="btn btn-outline-success btn-sm" v-on:ckick="event_click_add_new_eqpm()">Добавить новое оборудование</button>
+        </div>
+
+        <div style="display:flex; flex-direction:row; justify-content:flex-start; height: 300px; max-height:300px; overflow-y: scroll;">
             <table-eqpm-vue-cmp>
             </table-eqpm-vue-cmp>
         </div>

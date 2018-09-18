@@ -11,6 +11,9 @@
         firebase.initializeApp(this.config);
     };
     this.equipments = function () {
+        if (!firebase.apps.length)
+            this.init();
+
         return new Promise((res, rej) => {
             firebase.database().ref('/equipments/').once('value').then((snapshot) => {
                 res(snapshot.val());

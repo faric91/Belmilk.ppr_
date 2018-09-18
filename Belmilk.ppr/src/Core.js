@@ -1,14 +1,13 @@
-﻿import { EventBus } from './EventBus.js'
-import FirebaseBelmilk from './firebase_belmilk.js'
-import SearchEqpmBelmilk from './search_belmilk.js'
-import _ from 'lodash'
+﻿import FirebaseBelmilk from './firebase_belmilk';
+import _ from 'lodash';
+import { Promise } from 'core-js';
 
 
 export default function CoreBelmilk() {
 
     function getDate (date, period) {
-        var date = new Date(date);
-        return date.setMonth(date.getMonth() + period);
+        var systemdate = new Date(date);
+        return systemdate.setMonth(systemdate.getMonth() + period);
     }
 
     function dateCompare (date, period, option) {
@@ -31,13 +30,12 @@ export default function CoreBelmilk() {
                 return true;
             return false;
         }
-    }
+    };
 
     this.equipmentsFilter = function (option) {
         return new Promise((res, rej) => {
             var filterEqpms;
             var frDb = new FirebaseBelmilk();
-            frDb.init();
             frDb.equipments().then((eqpms) => {
                 filterEqpms = _.filter(eqpms, (item) => {
                     if (item === undefined)
@@ -48,7 +46,25 @@ export default function CoreBelmilk() {
                 res(filterEqpms);
             });
         });
-    }
+    };
+
+    this.equipment = function (index) {
+        return new Promise((res, rej) => {
+            if (index === undefined || index < 0)
+                rej(0);
+
+            var list;
+            var frDb = new FirebaseBelmilk();
+            frDb.equipments().then((eqpms) => {
+                list = eqpms;
+
+                if (index > list.length)
+                    rej(0);
+
+                res(list[index]);
+            });
+        });
+    };
 
 }
 

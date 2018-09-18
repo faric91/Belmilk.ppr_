@@ -1,10 +1,10 @@
-﻿import Vue from 'vue'
-import { EventBus } from './EventBus.js'
-import TableEqpmVueCmp from './components/TableEqpm-VueCmp.vue'
-import DivInfoEqpmVueCmp from './components/DivInfoEqpm-VueCmp.vue'
-import SearchInputVueCmp from './components/SearchInput-VueCmp.vue'
-import FirebaseBelmilk from './firebase_belmilk.js'
-import CoreBelmilk from './Core.js'
+﻿import Vue from 'vue';
+import { EventBus } from './EventBus';
+import TableEqpmVueCmp from './components/TableEqpm-VueCmp.vue';
+import DivInfoEqpmVueCmp from './components/DivInfoEqpm-VueCmp.vue';
+import SearchInputVueCmp from './components/SearchInput-VueCmp.vue';
+import FirebaseBelmilk from './firebase_belmilk';
+import CoreBelmilk from './Core';
 
 Vue = new Vue({
     el: '#app',
@@ -14,6 +14,7 @@ Vue = new Vue({
         SearchInputVueCmp
     },
     data: {
+        core_: {},
         f: {},
         list_eqpm: [],
         search_string: '',
@@ -22,17 +23,17 @@ Vue = new Vue({
         secondMes: 'second message'
     },
     created: function () {
-        EventBus.$on('event_click_info-eqpm', id => {
-            if (id !== undefined) {
-                this.eqpm_info_visible = true;
-            }
-        });
+        this.core_ = new CoreBelmilk();
 
-        
+        EventBus.$on('event_click_info_eqpm', (index) => {
+            this.core_.equipment(index).then((res) => {
+                console.log(res);
+            });
+        });
     },
     methods: {
-        event_keyup_serch() {
-            console.log(this.list_eqpm);
+        event_click_add_new_eqpm() {
+
         }
     }
 })
