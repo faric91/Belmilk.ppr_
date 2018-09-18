@@ -9,7 +9,7 @@
     };
     this.init = function () {
         firebase.initializeApp(this.config);
-    }
+    };
     this.equipments = function () {
         return new Promise((res, rej) => {
             firebase.database().ref('/equipments/').once('value').then((snapshot) => {
@@ -18,6 +18,6 @@
             if (firebase === undefined) {
                 rej(new Error());
             }
-        })
-    }
+        });
+    };
 }

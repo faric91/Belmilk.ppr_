@@ -5,18 +5,18 @@
 </template>
 
 <script>
-    import { EventBus } from '../EventBus.js'
-    import SearchEqpmBelmilk from '../search_belmilk.js'
+    import { EventBus } from '../EventBus';
+    import SearchEqpmBelmilk from '../search_belmilk';
 
     export default {
         data: function () {
             return {
                 s: {},
                 search_string: ''
-            }
+            };
         },
         created: function () {
-            
+
         },
         methods: {
             event_keyup_serch() {
@@ -26,9 +26,9 @@
             parse_search_string() {
                 this.s = new SearchEqpmBelmilk();
             },
-            event_Event_bus(s) {
+            event_Event_bus() {
                 EventBus.$emit('event_search_eqpm', this.s);
             }
         }
-    }
+    };
 </script>

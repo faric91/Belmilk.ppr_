@@ -6,16 +6,16 @@
             <table class="table table-hover table-bordered" id="table_eqpm">
                 <thead>
                     <tr>
-                        <th>№</th>
+                        <th>#</th>
                         <th>Номер</th>
+                        <th>Хар-ка</th>
                         <th>Период</th>
                         <th>Дата последней поверки</th>
-                        <th>Дата следующей поверки</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr is="row-eqpm-vue-cmp" v-for="(eqpm, index) in eqpms" v-bind:eqpm="eqpm" v-bind:id="index"></tr>
+                    <tr is="row-eqpm-vue-cmp" v-for="(eqpm, index) in eqpms" v-bind:eqpm="eqpm" v-bind:index="index"></tr>
                 </tbody>
             </table>
         </div>
@@ -30,38 +30,30 @@
 </style>
 
 <script>
-    import { EventBus } from '../EventBus.js'
-    import RowEqpmVueCmp from './RowEqpm-VueCmp.vue'
+    import { EventBus } from '../EventBus';
+    import CoreBelmilk from '../Core';
+    import RowEqpmVueCmp from './RowEqpm-VueCmp.vue';
 
 
     export default {
         data: function () {
             return {
-                eqpms: [
-                    {
-                        number: 1,
-                        article: 'y-01',
-                        stage: '12',
-                        lastDate: '2018.09.10',
-                        nextDate: '2018.10.10'
-                    },
-                    {
-                        number: 2,
-                        article: 'article-02',
-                        stage: '12',
-                        lastDate: '2018.09.11',
-                        nextDate: '2018.10.11'
-                    }
-                ]
-            }
+                eqpms: [],
+                core_: {}
+            };
         },
         created: function () {
-            //EventBus.$on('event_search_eqpm', (s) => {
-            //    console.log(s.startdate);
-            //});
+            console.log(this.core_);
+            this.core_ = new CoreBelmilk();
+
+            EventBus.$on('event_search_eqpm', (s) => {
+                this.core_.equipmentsFilter(s).then((res) => {
+                    this.eqpms = res;
+                });
+            });
         },
         components: {
             'row-eqpm-vue-cmp': RowEqpmVueCmp
-        },
-    }
+        }
+    };
 </script>

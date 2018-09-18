@@ -28,13 +28,7 @@ Vue = new Vue({
             }
         });
 
-        EventBus.$on('event_search_eqpm', (s) => {
-            var _core = new CoreBelmilk();
-            _core.equipmentsFilter(s).then((res) => {
-                console.log(res);
-            });
-            
-        });
+        
     },
     methods: {
         event_keyup_serch() {
