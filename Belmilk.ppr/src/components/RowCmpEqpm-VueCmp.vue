@@ -2,7 +2,7 @@
     <tr>
         <td>{{index}}</td>
         <td>{{cmp_eqpm.number}}</td>
-        <td>{{cmp_eqpm.desct}}</td>
+        <td>{{cmp_eqpm.descr}}</td>
         <td>{{cmp_eqpm.period}}</td>
         <td>{{cmp_eqpm.prevdate}}</td>
         <td>

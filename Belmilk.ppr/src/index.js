@@ -25,9 +25,10 @@ Vue = new Vue({
     created: function () {
         this.core_ = new CoreBelmilk();
 
+        var this_ = this;
         EventBus.$on('event_click_info_eqpm', (index) => {
             this.core_.equipment(index).then((res) => {
-                console.log(res);
+                this_.eqpm_info_visible = true;
             });
         });
     },
@@ -36,4 +37,4 @@ Vue = new Vue({
 
         }
     }
-})
+});

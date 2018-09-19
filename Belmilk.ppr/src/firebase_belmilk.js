@@ -1,5 +1,5 @@
 ﻿export default function FirebaseBelmilk() {
-    this.config = {
+    var config = {
         apiKey: "AIzaSyDRmF7-ygZVxEqONzWdZMpOGatuaGRuAG0",
         authDomain: "my-first-fb-project-d2eea.firebaseapp.com",
         databaseURL: "https://my-first-fb-project-d2eea.firebaseio.com",
@@ -7,12 +7,14 @@
         storageBucket: "my-first-fb-project-d2eea.appspot.com",
         messagingSenderId: "682214931627"
     };
-    this.init = function () {
-        firebase.initializeApp(this.config);
-    };
+
+    function init() {
+        firebase.initializeApp(config);
+    }
+    
     this.equipments = function () {
         if (!firebase.apps.length)
-            this.init();
+            init();
 
         return new Promise((res, rej) => {
             firebase.database().ref('/equipments/').once('value').then((snapshot) => {

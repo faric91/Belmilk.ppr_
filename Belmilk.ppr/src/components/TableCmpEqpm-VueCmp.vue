@@ -17,6 +17,8 @@
 </template>
 
 <script>
+    import { EventBus } from '../EventBus';
+    import CoreBelmilk from '../Core';
     import RowCmpEqpmVueCmp from './RowCmpEqpm-VueCmp.vue';
 
     export default {
@@ -25,7 +27,19 @@
         },
         data: function () {
             return {
+                core_: {},
+                cmps_eqpm: []
             };
+        },
+        created: function () {
+            this.core_ = new CoreBelmilk();
+
+            EventBus.$on('event_click_info_eqpm', (index) => {
+                this.core_.equipment(index).then((res) => {
+                    this.cmps_eqpm = res.components;
+                    console.log(this.cmps_eqpm);
+                });
+            });
         }
     };
 </script>
