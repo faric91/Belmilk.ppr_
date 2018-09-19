@@ -66,5 +66,13 @@ export default function CoreBelmilk() {
         });
     };
 
+    this.addNewEquipment = function (item) {
+        var frDb = new FirebaseBelmilk();
+
+        //this.equipment(0).then((eqpm) => {
+            //console.log(eqpm);
+            frDb.set(item);
+        //});
+    };
 }
 

@@ -25,4 +25,15 @@
             }
         });
     };
+
+    this.set = function (item) {
+        firebase.database().ref('/equipments/gas432zxy2').set({
+            number: item.number,
+            descr: item.descr,
+            period: item.period,
+            prevdate: item.prevdate,
+            components: item.components,
+            where: item.where
+        });
+    };
 }

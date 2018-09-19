@@ -3,8 +3,8 @@ import { EventBus } from './EventBus';
 import TableEqpmVueCmp from './components/TableEqpm-VueCmp.vue';
 import DivInfoEqpmVueCmp from './components/DivInfoEqpm-VueCmp.vue';
 import SearchInputVueCmp from './components/SearchInput-VueCmp.vue';
-import FirebaseBelmilk from './firebase_belmilk';
 import CoreBelmilk from './Core';
+import eqpmBelmilk from './EquipmentObject_belmilk';
 
 Vue = new Vue({
     el: '#app',
@@ -31,10 +31,12 @@ Vue = new Vue({
                 this_.eqpm_info_visible = true;
             });
         });
+
     },
     methods: {
         event_click_add_new_eqpm() {
-
+            var item = new eqpmBelmilk();
+            this.core_.addNewEquipment(item);
         }
     }
 });
