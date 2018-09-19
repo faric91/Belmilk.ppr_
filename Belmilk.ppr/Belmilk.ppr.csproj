@@ -203,6 +203,7 @@
     <Content Include="src\components\TableCmpEqpm-VueCmp.vue" />
     <Content Include="src\components\RowCmpEqpm-VueCmp.vue" />
     <Content Include="src\components\SearchInput-VueCmp.vue" />
+    <Content Include="src\components\ModalAddNewEqpm-VueCmp.vue" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -18,7 +18,7 @@
         </div>
 
         <div style="display:flex; flex-direction:row; justify-content:flex-end; margin-bottom:5px; padding:5px;">
-            <button type="button" class="btn btn-outline-success btn-sm" v-on:click="event_click_add_new_eqpm()">Добавить новое оборудование</button>
+            <button type="button" class="btn btn-outline-success btn-sm" v-on:click="showModal()">Добавить новое оборудование</button>
         </div>
 
         <div style="display:flex; flex-direction:row; justify-content:flex-start; height: 300px; max-height:300px; overflow-y: scroll;">
@@ -31,4 +31,7 @@
             </div-info-eqpm-vue-cmp>
         </div>
     </div>
+
+    <modal-add-new-eqpm-vue-cmp v-show="isModalVisible" v-on:close="closeModal">
+    </modal-add-new-eqpm-vue-cmp>
 </div>

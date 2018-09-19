@@ -1,7 +1,7 @@
 ﻿export default function eqpmBelmilk() {
     this.id = '';
     this.descr = '';
-    this.number = 0;
+    this.number = '';
     this.period = 0;
     this.prevdate = '';
     this.where = {
