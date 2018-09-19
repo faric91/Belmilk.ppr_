@@ -1,7 +1,6 @@
 ﻿import FirebaseBelmilk from './firebase_belmilk';
 import _ from 'lodash';
-import { Promise } from 'core-js';
-
+import uuidv1 from 'uuid/v1';
 
 export default function CoreBelmilk() {
 
@@ -22,6 +21,8 @@ export default function CoreBelmilk() {
             return true;
         else {
             var counter = 0;
+            if (item.components === undefined)
+                return false;
             item.components.forEach((component) => {
                 if (dateCompare(component.prevdate, component.period, option))
                     counter++;
@@ -61,18 +62,17 @@ export default function CoreBelmilk() {
                 if (index > list.length)
                     rej(0);
 
-                res(list[index]);
+                var res = _.find(list, (item) => {
+                    item.id === index;
+                });
+                res(res);
             });
         });
     };
 
     this.addNewEquipment = function (item) {
         var frDb = new FirebaseBelmilk();
-
-        //this.equipment(0).then((eqpm) => {
-            //console.log(eqpm);
-            frDb.set(item);
-        //});
+        frDb.set(item, uuidv1());
     };
 }
 

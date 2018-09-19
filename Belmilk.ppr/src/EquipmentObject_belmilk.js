@@ -1,4 +1,5 @@
 ﻿export default function eqpmBelmilk() {
+    this.id = '';
     this.descr = '';
     this.number = 0;
     this.period = 0;

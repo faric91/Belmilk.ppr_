@@ -1,4 +1,6 @@
-﻿export default function FirebaseBelmilk() {
+﻿
+
+export default function FirebaseBelmilk() {
     var config = {
         apiKey: "AIzaSyDRmF7-ygZVxEqONzWdZMpOGatuaGRuAG0",
         authDomain: "my-first-fb-project-d2eea.firebaseapp.com",
@@ -26,8 +28,9 @@
         });
     };
 
-    this.set = function (item) {
-        firebase.database().ref('/equipments/gas432zxy2').set({
+    this.set = function (item, uid) {
+        firebase.database().ref('/equipments/' + uid).set({
+            id: uid,
             number: item.number,
             descr: item.descr,
             period: item.period,
