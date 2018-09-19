@@ -20,6 +20,7 @@ export default function FirebaseBelmilk() {
 
         return new Promise((res, rej) => {
             firebase.database().ref('/equipments/').once('value').then((snapshot) => {
+                console.log(snapshot.val());
                 res(snapshot.val());
             });
             if (firebase === undefined) {

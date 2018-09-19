@@ -29,7 +29,7 @@
         },
         methods: {
             event_click_eqpm_info() {
-                EventBus.$emit('event_click_info_eqpm', this.index);
+                EventBus.$emit('event_click_info_eqpm', this.eqpm.id);
             }
         }
     };

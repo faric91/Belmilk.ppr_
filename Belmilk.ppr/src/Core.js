@@ -51,7 +51,7 @@ export default function CoreBelmilk() {
 
     this.equipment = function (index) {
         return new Promise((res, rej) => {
-            if (index === undefined || index < 0)
+            if (index === undefined)
                 rej(0);
 
             var list;
@@ -59,13 +59,12 @@ export default function CoreBelmilk() {
             frDb.equipments().then((eqpms) => {
                 list = eqpms;
 
-                if (index > list.length)
-                    rej(0);
-
-                var res = _.find(list, (item) => {
-                    item.id === index;
+                var result = _.find(list, (item) => {
+                    if (item === undefined)
+                        return false;
+                    return item.id === index;
                 });
-                res(res);
+                res(result);
             });
         });
     };

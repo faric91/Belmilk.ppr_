@@ -35,6 +35,8 @@
             this.core_ = new CoreBelmilk();
 
             EventBus.$on('event_click_info_eqpm', (index) => {
+                console.log(index);
+
                 this.core_.equipment(index).then((res) => {
                     this.cmps_eqpm = res.components;
                     console.log(this.cmps_eqpm);
