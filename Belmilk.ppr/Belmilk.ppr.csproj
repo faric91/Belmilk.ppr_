@@ -204,6 +204,7 @@
     <Content Include="src\components\RowCmpEqpm-VueCmp.vue" />
     <Content Include="src\components\SearchInput-VueCmp.vue" />
     <Content Include="src\components\ModalAddNewEqpm-VueCmp.vue" />
+    <Content Include="src\components\DivInfoPprEqpm-VueCmp.vue" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

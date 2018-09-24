@@ -17,65 +17,74 @@
                 <section class="modal-body">
                     <div style="display:flex; flex-direction:column; justify-content:flex-start;">
                         <div style="display:flex; flex-direction:row; justify-content: flex-start;">
-                            <div style="width:20%;">
-                                <p>Номер</p>
+                            <div style="width:20%; display:flex; flex-direction:row; justify-content:flex-end;">
+                                <p>Номер :</p>
                             </div>
-                            <div style="width:80%;">
+                            <div style="width:80%; margin-left:10px;">
                                 <input v-model="newItem.number" class="form-control" />
                             </div>
                         </div>
 
                         <div style="display:flex; flex-direction:row; justify-content: flex-start; margin-top:5px;">
-                            <div style="width:20%;">
-                                <p>Описание</p>
+                            <div style="width:20%; display:flex; flex-direction:row; justify-content:flex-end;">
+                                <p>Описание :</p>
                             </div>
-                            <div style="width:80%;">
+                            <div style="width:80%; margin-left:10px;">
                                 <input v-model="newItem.descr" class="form-control" />
                             </div>
                         </div>
 
                         <div style="display:flex; flex-direction:row; justify-content: flex-start; margin-top:5px;">
-                            <div style="width:20%;">
-                                <p>Период</p>
+                            <div style="width:20%; display:flex; flex-direction:row; justify-content:flex-end;">
+                                <p>Период :</p>
                             </div>
-                            <div style="width:80%;">
+                            <div style="width:80%; margin-left:10px;">
                                 <input v-model="newItem.period" class="form-control" />
                             </div>
                         </div>
 
                         <div style="display:flex; flex-direction:row; justify-content: flex-start; margin-top:5px;">
-                            <div style="width:20%;">
-                                <p>Дата последнего ремонта</p>
+                            <div style="width:20%; display:flex; flex-direction:row; justify-content:flex-end;">
+                                <p>Дата последнего ремонта :</p>
                             </div>
-                            <div style="width:80%;">
+                            <div style="width:80%; margin-left:10px;">
                                 <input v-model="newItem.prevdate" class="form-control" type="date" />
                             </div>
                         </div>
 
                         <div style="display:flex; flex-direction:row; justify-content: flex-start; margin-top:5px; margin-left:15px;">
-                            <div style="width:20%;">
-                                <p>Площадка</p>
+                            <div style="width:20%; display:flex; flex-direction:row; justify-content:flex-end;">
+                                <p>Площадка :</p>
                             </div>
-                            <div style="width:80%;">
-                                <input v-model="newItem.where.platform" class="form-control" />
+                            <div style="width:80%; margin-left:10px;">
+                                <input v-model="newItem.where.platform" class="form-control" type="number" max="2" min="0"/>
                             </div>
                         </div>
 
                         <div style="display:flex; flex-direction:row; justify-content: flex-start; margin-top:5px; margin-left:15px;">
-                            <div style="width:20%;">
-                                <p>Цех</p>
+                            <div style="width:20%; display:flex; flex-direction:row; justify-content:flex-end;">
+                                <p>Цех :</p>
                             </div>
-                            <div style="width:80%;">
+                            <div style="width:80%; margin-left:10px;">
                                 <input v-model="newItem.where.manufacture" class="form-control" />
                             </div>
                         </div>
 
                         <div style="display:flex; flex-direction:row; justify-content: flex-start; margin-top:5px; margin-left:15px;">
-                            <div style="width:20%;">
-                                <p>Место</p>
+                            <div style="width:20%; display:flex; flex-direction:row; justify-content:flex-end;">
+                                <p>Место :</p>
                             </div>
-                            <div style="width:80%;">
+                            <div style="width:80%; margin-left:10px;">
                                 <input v-model="newItem.where.place" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div style="display:flex; flex-direction:column; justify-content:flex-start;">
+                            <div style="display:flex; flex-direction:row; justify-content:flex-start;">
+                                <p>Детали:</p>
+                            </div>
+                            <div style="display:flex; flex-direction:row; justify-content:flex-start;">
+
                             </div>
                         </div>
 
@@ -166,20 +175,20 @@
         border-radius: 2px;
     }
 
-    input {
+    .input-belmilk {
         font-size: 12px!important;
         padding:2px 3px 2px 3px!important;
         height:20px!important;
     }
 
-    p {
+    .p-belmilk {
         margin-bottom:5px!important;
     }
 </style>
 
 
 <script>
-    import eqpmBelmilk from '../EquipmentObject_belmilk';
+    import { eqpmBelmilk } from '../EquipmentObject_belmilk';
 
     export default {
         data: function () {

@@ -20,7 +20,7 @@ export default function FirebaseBelmilk() {
 
         return new Promise((res, rej) => {
             firebase.database().ref('/equipments/').once('value').then((snapshot) => {
-                console.log(snapshot.val());
+                //console.log(snapshot.val());
                 res(snapshot.val());
             });
             if (firebase === undefined) {
@@ -34,10 +34,7 @@ export default function FirebaseBelmilk() {
             id: uid,
             number: item.number,
             descr: item.descr,
-            period: item.period,
-            prevdate: item.prevdate,
-            components: item.components,
-            where: item.where
+            where: where
         });
     };
 }

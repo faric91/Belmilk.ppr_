@@ -17,17 +17,25 @@ export default function CoreBelmilk() {
     }
 
     this.eqpmCompare = function (item, option) {
-        if (dateCompare(item.prevdate, item.period, option))
+        
+        var ppr = _.find(item.ppr, (ppr) => {
+            return dateCompare(ppr.lastdate, ppr.period, option);
+        });
+        if (ppr !== undefined) {
             return true;
+        }
         else {
-            var counter = 0;
             if (item.components === undefined)
                 return false;
-            item.components.forEach((component) => {
-                if (dateCompare(component.prevdate, component.period, option))
-                    counter++;
+            var cmp = _.find(item.components, (c) => {
+                var cmp_ppr = _.find(c.ppr, (p) => {
+                    return dateCompare(p.lastdate, p.period, option);
+                });
+                if (cmp_ppr !== undefined)
+                    return true;
+                return false;
             });
-            if (counter > 0)
+            if (cmp !== undefined)
                 return true;
             return false;
         }

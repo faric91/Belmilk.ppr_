@@ -5,7 +5,6 @@ import DivInfoEqpmVueCmp from './components/DivInfoEqpm-VueCmp.vue';
 import SearchInputVueCmp from './components/SearchInput-VueCmp.vue';
 import ModalAddNewEqpmVueCmp from './components/ModalAddNewEqpm-VueCmp.vue';
 import CoreBelmilk from './Core';
-import eqpmBelmilk from './EquipmentObject_belmilk';
 
 Vue = new Vue({
     el: '#app',
